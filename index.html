@@ -15,7 +15,7 @@
         <div class="intro-cont">
             <header>
                 <img src="image/lk.svg" alt="">
-                <nav>
+                <nav class="burger-menu">
                     <ul>
                         <li><a href="index.html">Главная</a></li>
                         <li><a href="#why-we">О нас</a></li>
@@ -23,14 +23,31 @@
                         <li><a href="#comments">Отзывы</a></li>
                         <li><a href="#contact">Контакты</a></li>
                     </ul>
+                    <svg class="burger-close" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+                                fill="#ffffff"></path>
+                        </g>
+                    </svg>
                 </nav>
+                <svg class="burger-btn" width="20" height="15" viewBox="0 0 20 15" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0 14.54V13.2117H20V14.54H0ZM0 8.20414V6.87586H20V8.20414H0ZM0 1.86827V0.540001H20V1.86827H0Z"
+                        fill="#15223F" />
+                </svg>
+
             </header>
 
             <div class="intro">
                 <div class="intro-left">
                     <h2>ППРОДВИЖЕНИЕ НА OZON</h2>
                     <span>с помощью отзывов</span>
-                    <button class="transparent-btn" onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
+                    <button class="transparent-btn"
+                        onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
                 </div>
                 <img src="image/intro.png" alt="">
             </div>
@@ -86,7 +103,8 @@
                     <p>Начните продвигать свои товары уже сегодня!</p>
                     <span>И получите скидку 5% по промокоду LightBoost на первую покупку</span>
                 </div>
-                <button class="blue-btn" onclick="window.open('https://t.me/lightboost_manager', '_blank')">НАПИСАТЬ НАМ</button>
+                <button class="blue-btn" onclick="window.open('https://t.me/lightboost_manager', '_blank')">НАПИСАТЬ
+                    НАМ</button>
             </div>
         </div>
 
@@ -110,7 +128,8 @@
 
                         <p>Цена: 21.500₽</p>
                         <span>На 5% выгоднее, если рассматривать без тарифа</span>
-                        <button class="transparent-btn" onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
+                        <button class="transparent-btn"
+                            onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
                     </div>
                     <div class="rates-item">
                         <h3>ТАРИФ “СТАНДАРТ”</h3>
@@ -125,7 +144,8 @@
 
                         <p>Цена: 41.500₽</p>
                         <span>На 9% выгоднее, если рассматривать без тарифа</span>
-                        <button class="transparent-btn" onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
+                        <button class="transparent-btn"
+                            onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
                     </div>
                     <div class="rates-item">
                         <h3>ТАРИФ “ПРЕМИУМ”</h3>
@@ -140,7 +160,8 @@
 
                         <p>Цена: 80.000₽</p>
                         <span>На 13% выгоднее, если рассматривать без тарифа</span>
-                        <button class="transparent-btn" onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
+                        <button class="transparent-btn"
+                            onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
                     </div>
                     <div class="rates-item">
                         <h3>ТАРИФ “ПРЕМИУМ”</h3>
@@ -155,7 +176,8 @@
 
                         <p>Цена: 117.500₽</p>
                         <span>На 17% выгоднее, если рассматривать без тарифа</span>
-                        <button class="transparent-btn" onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
+                        <button class="transparent-btn"
+                            onclick="window.open('https://t.me/lightboost_manager', '_blank')">Узнать подробнее</button>
                     </div>
                 </div>
             </div>
@@ -259,14 +281,27 @@
     <script>
         const swiper = new Swiper('.swiper', {
             loop: true,
-            slidesPerView: 1.35,
+            slidesPerView: 1,
             spaceBetween: 150,
+            breakpoints: {
+                1200: {
+                    slidesPerView: 1.35,
+                    spaceBetween: 10,
+                }
+            },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
         });
+
+        const cont = document.querySelector('.container');
+
+        window.onload = () => {
+            cont.classList.add('animated');
+        }
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
