@@ -3,7 +3,17 @@
     src: url(fonts/Galgo.ttf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
@@ -15,7 +25,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: Inter;
 }
 
 button {
@@ -56,6 +66,17 @@ button {
     line-height: 100%;
     letter-spacing: 1%;
     color: #fff;
+    position: relative;
+}
+
+.intro h2::after {
+    content: '';
+    width: 23px;
+    height: 6px;
+    position: absolute;
+    background: #fff;
+    left: 3px;
+    top: 27px;
 }
 
 .intro span {
@@ -92,15 +113,26 @@ button {
     background: #0C0C0C;
 }
 
-.container>div>div {
+.container .intro {
     transform: translateY(150px);
     opacity: 0;
-    transition: .4s;
+    transition: .7s;
 }
 
-.container.animated>div>div {
+.container.animated .intro {
     transform: translateY(0);
     opacity: 1;
+}
+
+.container>div>div {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.container>div>div.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 header {
@@ -181,27 +213,23 @@ nav ul li a {
 }
 
 .why_we-item p {
+    color: #FFF;
     font-family: Montserrat;
-    font-weight: 800;
-    font-style: ExtraBold;
     font-size: 30px;
-    leading-trim: NONE;
-    line-height: 100%;
-    letter-spacing: 0%;
-    vertical-align: middle;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
     color: #fff;
     margin-top: 30px;
 }
 
 .why_we-item span {
+    color: #FFF;
     font-family: Montserrat;
-    font-weight: 300;
-    font-style: Light;
     font-size: 25px;
-    leading-trim: NONE;
-    line-height: 100%;
-    letter-spacing: 0%;
-    vertical-align: middle;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
     margin-top: 15px;
     color: #fff;
 }
@@ -619,7 +647,7 @@ footer {
     padding: 20px 0;
     display: grid;
     grid-template-columns: 350px 1fr;
-    gap: 107px;
+    gap: 100px;
 }
 
 .footer-left {
@@ -797,13 +825,25 @@ footer nav ul li a {
     fill: #fff;
 }
 
-.burger-btn, .burger-close {
+.burger-btn,
+.burger-close {
     cursor: pointer;
     display: none;
 }
 
 .burger-close {
     width: 25px;
+}
+
+#noise-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: .06;
 }
 
 @media screen and (max-width:1400px) {
@@ -831,6 +871,7 @@ footer nav ul li a {
     .section {
         max-width: 375px;
     }
+
     .intro-cont {
         height: 100vh;
     }
@@ -859,6 +900,7 @@ footer nav ul li a {
     .intro span {
         font-size: 70px;
     }
+
     .intro button.transparent-btn {
         font-size: 20px;
     }
@@ -914,7 +956,8 @@ footer nav ul li a {
         padding: 20px;
     }
 
-    .comments h2, .connect h2 {
+    .comments h2,
+    .connect h2 {
         font-size: 32px;
     }
 
@@ -938,7 +981,8 @@ footer nav ul li a {
         margin-top: 30px;
     }
 
-    .connect h2 span, .connect h2 {
+    .connect h2 span,
+    .connect h2 {
         font-size: 30px;
     }
 
@@ -952,6 +996,7 @@ footer nav ul li a {
     .footer-right {
         gap: 20px;
     }
+
     .footer-right nav ul {
         gap: 10px;
     }
@@ -979,6 +1024,7 @@ footer nav ul li a {
     .rates-item>p {
         font-size: 20px;
     }
+
     .rates-item span {
         font-size: 14px;
     }
@@ -1002,7 +1048,7 @@ footer nav ul li a {
         padding-left: 0;
     }
 
-    header > img {
+    header>img {
         z-index: 111111;
     }
 
@@ -1083,5 +1129,11 @@ footer nav ul li a {
 
     .privacy-content.section {
         padding: 50px 0;
+    }
+
+    .intro h2::after {
+        left: 2px;
+        top: 15px;
+        width: 13px;
     }
 }

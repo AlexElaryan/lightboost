@@ -275,7 +275,7 @@
             </div>
         </div>
     </footer>
-
+    <canvas id="noise-canvas"></canvas>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
@@ -300,8 +300,52 @@
         window.onload = () => {
             cont.classList.add('animated');
         }
+
+        const canvas = document.getElementById('noise-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function generateNoise() {
+            const w = canvas.width = window.innerWidth;
+            const h = canvas.height = window.innerHeight;
+            const imageData = ctx.createImageData(w, h);
+            const buffer = new Uint32Array(imageData.data.buffer);
+
+            for (let i = 0; i < buffer.length; i++) {
+                const gray = Math.random() * 255 | 0;
+                buffer[i] = (255 << 24) | (gray << 16) | (gray << 8) | gray;
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+        }
+
+        function loop() {
+            generateNoise();
+            requestAnimationFrame(loop);
+        }
+
+        loop();
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const elements = entry.target.querySelectorAll('.container>div>div');
+                    elements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('show');
+                        }, index * 200); // 200ms delay between elements
+                    });
+                    observer.unobserve(entry.target); // animate once
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        document.querySelectorAll(".container>div").forEach(el => observer.observe(el));
     </script>
     <script src="script.js"></script>
+
+
 </body>
 
 </html>
