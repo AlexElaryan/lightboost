@@ -869,8 +869,10 @@ footer nav ul li a {
 @media screen and (max-width:1200px) {
 
     .section {
+        width: calc(100% - 20px);
         max-width: 375px;
     }
+
 
     .intro-cont {
         height: 100vh;
@@ -945,7 +947,7 @@ footer nav ul li a {
     }
 
     .comments-swiper {
-        width: 100%;
+        width: calc(100% - 20px);
         margin: auto;
         margin-top: 40px;
         max-width: 375px;
@@ -1135,5 +1137,30 @@ footer nav ul li a {
         left: 2px;
         top: 15px;
         width: 13px;
+    }
+
+    .white-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .rates-cont, .why_we-cont {
+        padding: 50px 0;
+    }
+
+    .why_we-item {
+        padding: 20px;
+    }
+
+    .why_we-item p {
+        font-size: 20px;
+    }
+
+    .why_we-item span {
+        font-size: 16px;
+    }
+
+    header, .intro  {
+        width: calc(100% - 20px);
     }
 }
