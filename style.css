@@ -137,10 +137,6 @@ button {
     transform: translateY(0);
 }
 
-.why_we-item {
-    overflow: hidden;
-}
-
 .why_we-item>* {
     transform: translateX(-100%);
     opacity: 0;
