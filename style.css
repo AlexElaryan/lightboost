@@ -860,8 +860,10 @@ footer nav ul li a {
     pointer-events: none;
     z-index: 9999;
     z-index: 1;
-    opacity: 1;
-    background: url(image/Noise_page-0001.jpg);
+    opacity: .1;
+    /* background: url(image/Noise_page-0001.jpg); */
+    /* background: url(image/noisy-background1.jpg); */
+    background: url(image/bernard.jpg);
     background-size: cover;
     mix-blend-mode: multiply;
     background-color: transparent;
@@ -869,7 +871,7 @@ footer nav ul li a {
 
 .container>div>* {
     z-index: 11;
-    /* position: relative; */
+    position: relative;
 }
 
 @media screen and (max-width:1400px) {
