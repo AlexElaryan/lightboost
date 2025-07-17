@@ -154,6 +154,10 @@ button {
     .rates-item:nth-child(even)>* {
         transform: translateX(100%);
     }
+
+     header nav ul {
+        margin-left: -122px;
+    }
 }
 
 .container>div>div.show .why_we-item>*,
