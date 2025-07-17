@@ -137,6 +137,22 @@ button {
     transform: translateY(0);
 }
 
+.why_we-item {
+    overflow: hidden;
+}
+
+.why_we-item > * {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: .7s;
+}
+
+.container>div>div.show 
+.why_we-item * {
+    transform: translateX(0);
+    opacity: 1;
+}
+
 header {
     width: 100%;
     display: flex;
