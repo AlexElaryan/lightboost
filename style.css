@@ -141,19 +141,23 @@ button {
     transform: translateY(0);
 }
 
-.why_we-item>* {
+.why_we-item>*,
+.rates-item>* {
     transform: translateX(-100%);
     opacity: 0;
     transition: .7s;
 }
 
 @media screen and (min-width:1200px) {
-    .why_we-item:nth-child(even)>* {
+
+    .why_we-item:nth-child(even)>*,
+    .rates-item:nth-child(even)>* {
         transform: translateX(100%);
     }
 }
 
-.container>div>div.show .why_we-item>* {
+.container>div>div.show .why_we-item>*,
+.container>div>div.show .rates-item>* {
     transform: translateX(0);
     opacity: 1;
 }
@@ -162,9 +166,16 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    gap: 370px;
+    /* gap: 370px; */
     padding: 20px 0;
     padding-left: 44px;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav ul {
@@ -483,7 +494,7 @@ nav ul li a {
 
 .transparent-btn:hover {
     background: linear-gradient(180deg, #8FADEA 0%, #142E7C 100%);
-    color: #142E7C;
+    /* color: #fff; */
 }
 
 .transparent-btn::before {
@@ -768,16 +779,7 @@ footer nav ul li a {
 .privacy-top {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 39px;
-}
-
-.privacy-top div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    color: #fff;
+    justify-content: center;
 }
 
 .privacy-top h2 {
@@ -791,17 +793,29 @@ footer nav ul li a {
     vertical-align: middle;
     margin-bottom: 10px;
     white-space: nowrap;
+    color: #fff;
+    text-align: center;
 }
 
-.privacy-top p {
+.date-of-update p {
     font-family: Montserrat;
     font-weight: 500;
     font-style: Medium;
-    font-size: 20px;
+    font-size: 24px;
     leading-trim: NONE;
     line-height: 100%;
     letter-spacing: 0%;
     vertical-align: middle;
+    color: #ffffffb9;
+}
+
+.date-of-update {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 40px;
 }
 
 .privacy-content {
@@ -1175,7 +1189,11 @@ footer nav ul li a {
 
     .privacy-top h2 {
         white-space: wrap;
-        font-size: 28px;
+        font-size: 24px;
+    }
+
+    .date-of-update p {
+        font-size: 14px;
     }
 
     .privacy-content.section {
