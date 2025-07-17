@@ -141,14 +141,19 @@ button {
     overflow: hidden;
 }
 
-.why_we-item > * {
+.why_we-item>* {
     transform: translateX(-100%);
     opacity: 0;
     transition: .7s;
 }
 
-.container>div>div.show 
-.why_we-item * {
+@media screen and (min-width:1200px) {
+    .why_we-item:nth-child(even)>* {
+        transform: translateX(100%);
+    }
+}
+
+.container>div>div.show .why_we-item>* {
     transform: translateX(0);
     opacity: 1;
 }
