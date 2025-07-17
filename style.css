@@ -32,6 +32,10 @@ button {
     cursor: pointer;
 }
 
+.container {
+    overflow: hidden;
+}
+
 .section {
     max-width: 1175px;
     width: calc(100% - 20px);
