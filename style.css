@@ -22,6 +22,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    transition: .3s;
 }
 
 body {
@@ -342,6 +343,11 @@ nav ul li a {
     padding: 20px 40px;
 }
 
+/* .blue-btn:hover {
+    color: #0509E3;
+    background: #fff;
+} */
+
 .rates-cont {
     background: url(image/Section-3.png);
     background-size: cover;
@@ -502,6 +508,12 @@ nav ul li a {
     font-weight: 700;
     line-height: normal;
     border: none;
+    transition: .3s;
+}
+
+.dark-blue-btn:hover {
+    background: #fff;
+    color: #8FADEA;
 }
 
 .rates-start p {
