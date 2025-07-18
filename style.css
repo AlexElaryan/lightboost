@@ -496,13 +496,13 @@ nav ul li a {
     margin-top: 100px;
 }
 
-.rates-start .transparent-btn::before {
+/* .rates-start .transparent-btn::before {
     padding: 5px;
-}
+} */
 
 .dark-blue-btn {
     border-radius: 20px;
-    background: var(--123, linear-gradient(180deg, #8FADEA 0%, #142E7C 100%));
+    background: linear-gradient(180deg, #8FADEA 0%, #142E7C 100%);
     height: 80px;
     width: 399px;
     color: #FFF;
@@ -517,8 +517,17 @@ nav ul li a {
 
 .dark-blue-btn:hover {
     background: #fff;
-    color: #8FADEA;
 }
+
+.dark-blue-btn:hover span {
+    background: linear-gradient(180deg, #8FADEA 0%, #142E7C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border: none;
+    background-color: transparent;
+}
+
 
 .rates-start p {
     white-space: pre-line;
@@ -537,7 +546,7 @@ nav ul li a {
     align-items: center;
 }
 
-.rates-start span {
+.rates-start>div>span {
     color: #FFF;
     font-family: Montserrat;
     font-size: 20px;
@@ -1307,7 +1316,7 @@ footer nav ul li a {
         gap: 15px;
     }
 
-    .rates-start span {
+    .rates-start>div>span {
         font-size: 18px;
     }
 
