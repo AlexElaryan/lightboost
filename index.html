@@ -205,16 +205,21 @@
                         </div>
                         <div class="swiper-slide">
                             <h3>Татьяна</h3>
-                            <p>Основатель магазина на OZON</p>
+                            <p>Владелец магазина на OZON</p>
                             <span>Большое спасибо за проделанную работу. Очень терпеливо ответят на все вопросы, помогут
                                 расстаться с сомнениями и страхами. Очень хочу, чтобы вы продолжали работать дальше, так
-                                как для меня это очень важно! От души благодарю!</span>
+                                как для меня это очень важно! Очень благодарна вам за подход, за поддержку, за то, что
+                                можно доверять. От всей души рекомендую! </span>
                         </div>
                         <div class="swiper-slide">
                             <h3>Вадим</h3>
                             <p>Менеджер магазина на OZON</p>
-                            <span>Вместе работаем почти 2 месяца. В начале переписки задал, интересующие меня вопросы. После получения ответов понял, что ребята понимают, что и как делать. Если вы не шарите в теме отзывов, то вам всё подробно объяснят. За всё время сотрудничества серьезных проблем не возникало. 
-Совместная работа прозрачная, все понятно. Быстро, четко, если возникают какие-либо сложности, то они быстро решаются. Плюсом ко всему парни дают рекомендации как избежать данных проблем в дальнейшем. Связь 24 на 7, отвечают почти всегда. К работе подходят основательно, не торопятся. Отзывы качественные. Рекомендую!</span>
+                            <span>Мы рады, что сотрудничаем именно с LightBoost. С самого начала всё было понятно,
+                                задали вопросы, получили развернутые и чёткие ответы, сразу стало ясно, что ребята знают
+                                своё дело. Работают спокойно, без суеты, но при этом быстро и по делу. Практически
+                                всегда на связи, даже в нерабочее время бывало. Отзывы приходят качественные, выглядят
+                                отлично и на деле реально карточки стали выше подниматься. Если возникают вопросы или
+                                нюансы, всё решается оперативно. Рекомендую, реально надёжное агентство.</span>
                         </div>
                     </div>
                 </div>
@@ -282,76 +287,77 @@
     </footer>
     <canvas id="noise-canvas"></canvas>
 
-    <di class="noise-texture"></div>
+    <di class="noise-texture">
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 150,
-            breakpoints: {
-                1200: {
-                    slidesPerView: 1.35,
-                    spaceBetween: 10,
-                }
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
+        <script>
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 150,
+                breakpoints: {
+                    1200: {
+                        slidesPerView: 1.35,
+                        spaceBetween: 10,
+                    }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
 
-        const cont = document.querySelector('.container');
+            const cont = document.querySelector('.container');
 
-        window.onload = () => {
-            cont.classList.add('animated');
-        }
-
-        const canvas = document.getElementById('noise-canvas');
-        const ctx = canvas.getContext('2d');
-
-        function generateNoise() {
-            const w = canvas.width = window.innerWidth;
-            const h = canvas.height = window.innerHeight;
-            const imageData = ctx.createImageData(w, h);
-            const buffer = new Uint32Array(imageData.data.buffer);
-
-            for (let i = 0; i < buffer.length; i++) {
-                const gray = Math.random() * 255 | 0;
-                buffer[i] = (255 << 24) | (gray << 16) | (gray << 8) | gray;
+            window.onload = () => {
+                cont.classList.add('animated');
             }
 
-            ctx.putImageData(imageData, 0, 0);
-        }
+            const canvas = document.getElementById('noise-canvas');
+            const ctx = canvas.getContext('2d');
 
-        function loop() {
-            generateNoise();
-            requestAnimationFrame(loop);
-        }
+            function generateNoise() {
+                const w = canvas.width = window.innerWidth;
+                const h = canvas.height = window.innerHeight;
+                const imageData = ctx.createImageData(w, h);
+                const buffer = new Uint32Array(imageData.data.buffer);
 
-        loop();
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const elements = entry.target.querySelectorAll('.container>div>div');
-                    elements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('show');
-                        }, index * 200); // 200ms delay between elements
-                    });
-                    observer.unobserve(entry.target); // animate once
+                for (let i = 0; i < buffer.length; i++) {
+                    const gray = Math.random() * 255 | 0;
+                    buffer[i] = (255 << 24) | (gray << 16) | (gray << 8) | gray;
                 }
-            });
-        }, {
-            threshold: 0.3
-        });
 
-        document.querySelectorAll(".container>div").forEach(el => observer.observe(el));
-    </script>
-    <script src="script.js"></script>
+                ctx.putImageData(imageData, 0, 0);
+            }
+
+            function loop() {
+                generateNoise();
+                requestAnimationFrame(loop);
+            }
+
+            loop();
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const elements = entry.target.querySelectorAll('.container>div>div');
+                        elements.forEach((el, index) => {
+                            setTimeout(() => {
+                                el.classList.add('show');
+                            }, index * 200); // 200ms delay between elements
+                        });
+                        observer.unobserve(entry.target); // animate once
+                    }
+                });
+            }, {
+                threshold: 0.3
+            });
+
+            document.querySelectorAll(".container>div").forEach(el => observer.observe(el));
+        </script>
+        <script src="script.js"></script>
 
 
 </body>
