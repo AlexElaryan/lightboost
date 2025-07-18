@@ -496,6 +496,10 @@ nav ul li a {
     margin-top: 100px;
 }
 
+.rates-start .transparent-btn::before {
+    padding: 5px;
+}
+
 .dark-blue-btn {
     border-radius: 20px;
     background: var(--123, linear-gradient(180deg, #8FADEA 0%, #142E7C 100%));
