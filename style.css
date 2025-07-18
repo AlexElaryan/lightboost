@@ -155,7 +155,7 @@ button {
         transform: translateX(100%);
     }
 
-     header nav ul {
+    header nav ul {
         margin-left: -122px;
     }
 }
@@ -351,6 +351,7 @@ nav ul li a {
 .rates {
     display: flex;
     flex-direction: column;
+    max-width: 1255px;
 }
 
 .rates h2 {
@@ -476,6 +477,57 @@ nav ul li a {
     margin-top: 20px;
     width: fit-content;
     align-self: center;
+}
+
+.rates-start {
+    border-radius: 40px;
+    border: 1px solid rgba(114, 86, 141, 0.72);
+    background: linear-gradient(227deg, rgba(255, 242, 242, 0.03) 25.7%, rgba(255, 250, 250, 0.07) 94.73%);
+    backdrop-filter: blur(64px);
+    padding: 40px 60px 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.dark-blue-btn {
+    border-radius: 20px;
+    background: var(--123, linear-gradient(180deg, #8FADEA 0%, #142E7C 100%));
+    height: 80px;
+    width: 399px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+}
+
+.rates-start p {
+    white-space: pre-line;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.rates-start>div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.rates-start span {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .transparent-btn {
@@ -1230,5 +1282,27 @@ footer nav ul li a {
     header,
     .intro {
         width: calc(100% - 20px);
+    }
+
+    .rates-start {
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 25px;
+        gap: 15px;
+    }
+
+    .rates-start span {
+        font-size: 18px;
+    }
+
+    .rates-start p {
+        font-size: 25px;
+    }
+
+    .dark-blue-btn {
+        width: 100%;
+        height: fit-content;
+        font-size: 18px;
+        padding: 15px;
     }
 }
